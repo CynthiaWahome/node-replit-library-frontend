@@ -106,12 +106,15 @@ app.delete("/api/delete-database", (req, res) => {
     .then((keysObJ) => {
       const keys = keysObj.value || [];
       return Promise.all(keys.map((key) => db.delete(key)));
-    }).then(() => {
+    })
+    .then(() => {
       console.warn("Database cleared");
+      res.status(204).send();
+    })
+  .catch((error) => 
       res.status(500).send(`${error} - Error deleting the database`),
         );
     })
-})
 
 
 app.listen(port, () => {
