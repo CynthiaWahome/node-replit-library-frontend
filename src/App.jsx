@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
 import BookList from './components/BookList';
+import AddBook from './components/AddBook';
 
 axios.defaults.baseURL = "https://46c02a64-23e3-414a-bca7-58a80c8db2df-00-3cpbtytslpj6y.worf.replit.dev";
   
@@ -28,6 +29,10 @@ export default function App() {
       <div>
         <div className="left-side">
           <BookList books={books} fetchBooks={fetchBooks} />
+        </div>
+
+        <div className="right-side"> 
+        <AddBook fetchbooks={fetchBooks} />
         </div>
       </div>
     </main>
