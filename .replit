@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 entrypoint = "index.js"
 modules = ["nodejs-20"]
 hidden = [".config", "package-lock.json"]
 
 [gitHubImport]
 requiredFiles = [".replit", "replit.nix", "package.json", "package-lock.json"]
+=======
+run = "npm run dev"
+modules = ["nodejs-20"]
+hidden = [".config", "package-lock.json"]
+entrypoint = "index.html"
+>>>>>>> node-replit-library-frontend/main
 
 [nix]
 channel = "stable-24_05"
@@ -12,6 +19,7 @@ channel = "stable-24_05"
 language = "nodejs"
 
 [deployment]
+<<<<<<< HEAD
 run = ["node", "index.js"]
 deploymentTarget = "cloudrun"
 ignorePorts = false
@@ -27,3 +35,16 @@ externalPort = 3000
 [[ports]]
 localPort = 4000
 externalPort = 3001
+=======
+deploymentTarget = "static"
+build = ["npm", "run", "build"]
+publicDir = "dist"
+
+[[ports]]
+localPort = 5173
+externalPort = 80
+
+[[ports]]
+localPort = 5174
+externalPort = 3000
+>>>>>>> node-replit-library-frontend/main
