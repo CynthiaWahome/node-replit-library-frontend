@@ -30,7 +30,7 @@ const AddBook= ({ fetchBooks }) => {
         value={author} 
         onChange={(e) => setAuthor(e.target.value)}
       />
-      <button onClick={addBookFunction}>Add Book </button>
+      <button onClick={addBookFunction}>Add Book</button>
     </div>
   );
 };
