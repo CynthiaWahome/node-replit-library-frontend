@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './App.css';
+import BookList from './components/BookList';
 
-axios.defaults.baseURL = "https://46c02a64-23e3-414a-bca7-58a80c8db2df-00-3cpbtytslpj6y.worf.replit.dev"
-import { collapseTextChangeRangesAcrossMultipleVersions } from 'typescript';
-
+axios.defaults.baseURL = "https://46c02a64-23e3-414a-bca7-58a80c8db2df-00-3cpbtytslpj6y.worf.replit.dev";
+  
 export default function App() {
   const [books, setBooks] = useState([]);
+  
   const fetchBooks = async () => {
     try {
       const response = await axios.get("/api/books");
@@ -19,7 +20,6 @@ export default function App() {
 
   // console.log(fetchBooks());
 
-
   return (
     <main className='app'>
       <h1>Book Library</h1>
@@ -27,18 +27,9 @@ export default function App() {
 
       <div>
         <div className="left-side">
-          <h2>All Books</h2>
-          <button onClick={fetchBooks}>Get All Books</button>
-          <ul>
-            {books.map((eachBook) => (
-            <li key={eachBook.id}>
-              {eachBook.id}) {eachBook.title} - {eachBook.author} 
-            </li>
-            ))}
-          </ul>
-          
+          <BookList books={books} fetchBooks={fetchBooks} />
         </div>
       </div>
     </main>
-  )
+  );
 }
