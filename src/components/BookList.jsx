@@ -1,6 +1,6 @@
 const BookList = ({ books, fetchBooks}) => {
   return (
-    <div>
+    <div className="book-list-container">
       <h2>All Books</h2>
       <button onClick={fetchBooks}>Get All Books</button>
       <ul>

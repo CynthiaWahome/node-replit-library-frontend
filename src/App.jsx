@@ -24,11 +24,11 @@ export default function App() {
   // console.log(fetchBooks());
 
   return (
-    <main className='app'>
+    <main className="app">
       <h1>Book Library</h1>
       <hr/>
 
-      <div>
+      <div className="container">
         <div className="left-side">
           <BookList books={books} fetchBooks={fetchBooks} />
         </div>

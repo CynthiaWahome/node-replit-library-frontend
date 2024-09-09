@@ -14,7 +14,7 @@ const DeleteBook = ({ fetchBooks }) => {
       }
     };
   return (
-    <div>
+    <div className="delete-book-container">
       <h2>Delete a Book</h2>
       <input 
         type="text" 

@@ -10,7 +10,8 @@ const DeleteDatabase = ({fetchBooks}) => {
     }
   };
   return (
-    <div>
+    <div className="delete-database-container">
+      <h2>Delete Database</h2>
       <button onClick={deleteDatabaseFunction}>Delete Database</button>
     </div>
   );

@@ -16,7 +16,7 @@ const AddBook= ({ fetchBooks }) => {
     }
   };
   return (
-    <div> 
+    <div className="add-book-container"> 
     <h2>Add a Book</h2>
       <input 
         type="text" 
